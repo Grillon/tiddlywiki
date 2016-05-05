@@ -1,0 +1,1 @@
+tiddlywiki $OPENSHIFT_DATA_DIR --init server
