@@ -1,4 +1,4 @@
-var $tw = require("./boot/boot.js").TiddlyWiki();
+var $tw = require("tiddlywiki").TiddlyWiki();
 
 $tw.boot.argv = [
   process.env.OPENSHIFT_DATA_DIR,
