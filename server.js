@@ -1,7 +1,7 @@
 var $tw = require("tiddlywiki").TiddlyWiki();
 
 $tw.boot.argv = [
-  process.env.OPENSHIFT_DATA_DIR+fr,
+  process.env.OPENSHIFT_DATA_DIR,
   "--verbose",
   "--server",
   process.env.OPENSHIFT_NODEJS_PORT,
