@@ -1,6 +1,6 @@
 {
   "name": "tiddlywiki",
-  "version": "5.1.0",
+  "version": "5.1.11",
   "description": "a non-linear personal web notebook",
   "keywords": [
     "OpenShift",
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "express": "~3.4.4",
-    "tiddlywiki": "Jermolene/TiddlyWiki5"
+    "tiddlywiki": "5.1.11"
   },
   "devDependencies": {},
   "bundleDependencies": [],
