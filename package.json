@@ -1,17 +1,17 @@
 {
-  "name": "OpenShift-Sample-App",
-  "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "name": "tiddlywiki",
+  "version": "latest",
+  "description": "a non-linear personal web notebook",
   "keywords": [
     "OpenShift",
     "Node.js",
     "application",
-    "openshift"
+    "tiddlywiki"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "Thierry",
+    "email": "thierry.grillon@gmail.com",
+    "url": "ras"
   },
   "bin": {
     "tiddlywiki": "tiddlywiki"
