@@ -1,6 +1,6 @@
 if [ ! -z "$TW_DATA_DIR" ];then
 export TW_DATA_DIR=$OPENSHIFT_DATA_DIR/fr
-if
+fi
 if [ ! -d "$TW_DATA_DIR" ];then
 tiddlywiki "$TW_DATA_DIR" --init fr-FR-server
 fi
