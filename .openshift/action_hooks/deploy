@@ -1,3 +1,3 @@
-if [ ! -d "$OPENSHIFT_DATA_DIR" ];then
-tiddlywiki "$OPENSHIFT_DATA_DIR" --init fr-FR-server
+if [ ! -e $OPENSHIFT_DATA_DIR/tiddlywiki.info ];then
+tiddlywiki $OPENSHIFT_DATA_DIR --init fr-FR-server
 fi
