@@ -1,4 +1,4 @@
-export TW_MODULES_DIR=$OPENSHIFT_REPO_DIR/tiddlywiki
+export TW_MODULES_DIR=$OPENSHIFT_REPO_DIR/node_modules/tiddlywiki
 if [ ! -e $OPENSHIFT_DATA_DIR/tiddlywiki.info ];then
 tiddlywiki $OPENSHIFT_DATA_DIR --init fr-FR-server
 fi
