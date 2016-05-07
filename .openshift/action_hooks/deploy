@@ -2,13 +2,13 @@ export TW_MODULES_DIR=$OPENSHIFT_REPO_DIR/node_modules/tiddlywiki
 if [ ! -e $OPENSHIFT_DATA_DIR/tiddlywiki.info ];then
 tiddlywiki $OPENSHIFT_DATA_DIR --init fr-FR-server
 fi
-if [ ! $(grep encodeTiddlerTitle $TW_MODULES_DIR/plugins/tiddlywiki/tiddlyweb/tiddlywebadaptor.js) ];then
+if [ ! "$(grep encodeTiddlerTitle $TW_MODULES_DIR/plugins/tiddlywiki/tiddlyweb/tiddlywebadaptor.js)" ];then
 sed -i 's/encodeURIComponent/encodeTiddlerTitle/g' $TW_MODULES_DIR/plugins/tiddlywiki/tiddlyweb/tiddlywebadaptor.js
 echo 'function encodeTiddlerTitle(title) {
         return encodeURIComponent(title.replace(/\//g, "%SLASH%"));
 	}'>>$TW_MODULES_DIR/plugins/tiddlywiki/tiddlyweb/tiddlywebadaptor.js
 fi
-if [ ! $(grep decodeTiddlerTitle $TW_MODULES_DIR/core/modules/commands/server.js) ];then
+if [ ! "$(grep decodeTiddlerTitle $TW_MODULES_DIR/core/modules/commands/server.js)" ];then
 sed -i 's/decodeURIComponent/decodeTiddlerTitle/g' $TW_MODULES_DIR/core/modules/commands/server.js
 echo 'function decodeTiddlerTitle(title) {
         return decodeURIComponent(title).replace(/%SLASH%/g, "/");
