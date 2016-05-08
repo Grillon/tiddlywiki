@@ -10,7 +10,7 @@ export TW_INFO_TMP=$OPENSHIFT_DATA_DIR/tiddlywiki.info
 if [ ! -e "$TW_INFO_TMP" ];then
 tiddlywiki $OPENSHIFT_DATA_DIR --init server
 ####### add french because init fr-FR-server is buggy #######
-sed -i 's/],/],\n\t"languages":"fr-FR",/' $TW_INFO_TMP
+sed -i 's/],/],\n\t"languages": [ "fr-FR" ],/' $TW_INFO_TMP
 fi
 
 ####### CORRECT PB with slash  to evite error syncing 404 #######
