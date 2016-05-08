@@ -19,9 +19,9 @@ il est neanmoins possible de les changer au moment du deploiement ou apres le de
 
 3. ` rhc app create tw nodejs-0.10 TW_USER=mon_user TW_PASSWD=mon_passwd --from-code=https://github.com/Grillon/tiddlywiki.git `
 
-..* mon_user et mon_passwd seront les user / passwd de votre choix.
+  * mon_user et mon_passwd seront les user / passwd de votre choix.
 
-..* tw est le nom choisi pour l'application.
+  * tw est le nom choisi pour l'application.
 
 4. un repertoire tw doit avoir été créé il represente le clone de l'application. Vous ne verrez rien d'autres que l'arborescence ci dessous car j'ai indiqué tiddliwiki comme dependance et non comme appli :)
 
