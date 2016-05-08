@@ -20,7 +20,7 @@ echo 'function encodeTiddlerTitle(title) {
         return encodeURIComponent(title.replace(/\//g, "%SLASH%"));
 	}'>>$TW_ENCODE_TMP
 fi
-if [ ! "$(grep decodeTiddlerTitle TW_DECODE_TMP)" ];then
+if [ ! "$(grep decodeTiddlerTitle $TW_DECODE_TMP)" ];then
 sed -i 's/decodeURIComponent/decodeTiddlerTitle/g' $TW_DECODE_TMP
 echo 'function decodeTiddlerTitle(title) {
         return decodeURIComponent(title).replace(/%SLASH%/g, "/");
