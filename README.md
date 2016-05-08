@@ -32,6 +32,7 @@ il est neanmoins possible de les changer au moment du deploiement ou apres le de
 ## changement de mot de passe : 
 
 ` rhc set-env TW_PASSWD=mon_nouveau_passwd TW_USER=mon_nouveau_username tw 
+
   rhc restart tw
 		`
 
