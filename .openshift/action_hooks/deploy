@@ -1,16 +1,28 @@
+#access facilities for deploy
 export TW_MODULES_DIR=$OPENSHIFT_REPO_DIR/node_modules/tiddlywiki
-if [ ! -e $OPENSHIFT_DATA_DIR/tiddlywiki.info ];then
+export TW_ENCODE_TMP=$TW_MODULES_DIR/plugins/tiddlywiki/tiddlyweb/tiddlywebadaptor.js
+export TW_DECODE_TMP=$TW_MODULES_DIR/core/modules/commands/server.js
+export TW_INFO_TMP=$TW_MODULES_DIR/tiddlywiki.info
+
+
+
+####### init server #######
+if [ ! -e "$TW_INFO_TMP" ];then
 tiddlywiki $OPENSHIFT_DATA_DIR --init server
+####### add french because init fr-FR-server is buggy #######
+sed -i 's/],/],\n\t"languages":"fr-FR",/' $TW_INFO_TMP
 fi
-if [ ! "$(grep encodeTiddlerTitle $TW_MODULES_DIR/plugins/tiddlywiki/tiddlyweb/tiddlywebadaptor.js)" ];then
-sed -i 's/encodeURIComponent/encodeTiddlerTitle/g' $TW_MODULES_DIR/plugins/tiddlywiki/tiddlyweb/tiddlywebadaptor.js
+
+####### CORRECT PB with slash  to evite error syncing 404 #######
+if [ ! "$(grep encodeTiddlerTitle $TW_ENCODE_TMP)" ];then
+sed -i 's/encodeURIComponent/encodeTiddlerTitle/g' $TW_ENCODE_TMP
 echo 'function encodeTiddlerTitle(title) {
         return encodeURIComponent(title.replace(/\//g, "%SLASH%"));
-	}'>>$TW_MODULES_DIR/plugins/tiddlywiki/tiddlyweb/tiddlywebadaptor.js
+	}'>>$TW_ENCODE_TMP
 fi
-if [ ! "$(grep decodeTiddlerTitle $TW_MODULES_DIR/core/modules/commands/server.js)" ];then
-sed -i 's/decodeURIComponent/decodeTiddlerTitle/g' $TW_MODULES_DIR/core/modules/commands/server.js
+if [ ! "$(grep decodeTiddlerTitle TW_DECODE_TMP)" ];then
+sed -i 's/decodeURIComponent/decodeTiddlerTitle/g' $TW_DECODE_TMP
 echo 'function decodeTiddlerTitle(title) {
         return decodeURIComponent(title).replace(/%SLASH%/g, "/");
-	}'>>$TW_MODULES_DIR/core/modules/commands/server.js
+	}'>>$TW_DECODE_TMP
 fi

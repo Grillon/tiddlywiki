@@ -1,5 +1,5 @@
-Premier essai serieux de packaging tiddlywiki pour openshift
-============================================================
+# Premier essai serieux de packaging tiddlywiki pour openshift
+
 
 Ce depot permet de demarrer sur un gear openshift un tiddlywiki nodeJS.
 
