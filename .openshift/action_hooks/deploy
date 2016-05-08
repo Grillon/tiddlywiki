@@ -2,7 +2,7 @@
 export TW_MODULES_DIR=$OPENSHIFT_REPO_DIR/node_modules/tiddlywiki
 export TW_ENCODE_TMP=$TW_MODULES_DIR/plugins/tiddlywiki/tiddlyweb/tiddlywebadaptor.js
 export TW_DECODE_TMP=$TW_MODULES_DIR/core/modules/commands/server.js
-export TW_INFO_TMP=$TW_MODULES_DIR/tiddlywiki.info
+export TW_INFO_TMP=$OPENSHIFT_DATA_DIR/tiddlywiki.info
 
 
 
